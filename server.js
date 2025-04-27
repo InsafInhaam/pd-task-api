@@ -12,6 +12,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "*", // Or restrict to your mobile IP
+  })
+);
+
 // Routes
 app.get("/", (req, res) => {
   res.send("API is running...");
