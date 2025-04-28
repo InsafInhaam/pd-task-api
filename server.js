@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 
 const authRoutes = require("./routes/authRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const leaveRoutes = require("./routes/leaveRoutes");
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/api/leave", leaveRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
